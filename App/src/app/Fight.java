@@ -1,5 +1,7 @@
 package app;
 
-public class Fight {
+import java.util.ArrayList;
 
+public class Fight {
+    public ArrayList players = new ArrayList();
 }
