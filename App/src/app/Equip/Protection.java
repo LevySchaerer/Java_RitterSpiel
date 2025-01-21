@@ -1,4 +1,4 @@
-package app;
+package app.Equip;
 
 public class Protection extends Equip {
     int deamage;

@@ -1,6 +1,6 @@
-package app;
+package app.Equip;
 
-public class Weapon extends Equip{
+public class Weapon extends Equip {
     int deamage;
     int absorption;
     String Typ;

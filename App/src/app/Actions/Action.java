@@ -1,10 +1,10 @@
-package app;
+package app.Actions;
 
 public class Action {
     String name;
     int ActionCost;
 
-    public getActionCost() {
+    public int getActionCost() {
         return ActionCost;
     }
 }

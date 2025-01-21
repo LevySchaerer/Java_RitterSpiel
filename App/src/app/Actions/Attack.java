@@ -1,4 +1,4 @@
-package app;
+package app.Actions;
 
 public class Attack extends Action {
     String name;
@@ -7,9 +7,5 @@ public class Attack extends Action {
     public Attack(String name, int actionCost) {
         this.name = name;
         this.actionCost = actionCost;
-    }
-
-    public doAttack() {
-
     }
 }
