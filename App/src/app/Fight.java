@@ -19,12 +19,28 @@ public class Fight {
 
     public void startTurn() { // Startet einen Neuen Spielzug.
         Creatur currentPlayer = players.get(currentPlayerIndex);
+        Creatur nextPlayer;
+
+        if (currentPlayerIndex == 1) {
+            nextPlayer = players.get(currentPlayerIndex - 1);
+        } else {
+            nextPlayer = players.get(currentPlayerIndex + 1);
+        }
+
+        currentPlayer.earnActionPoints(3);
+        if (currentPlayer.getActionPoints() > 9) {
+            currentPlayer.setActionPoints(10);
+        }
         System.out.println("Dieser Spieler ist am Zug: " + currentPlayer.getName());
 
         currentPlayer.choosAction();
         Turn playerTurn = new Turn(currentPlayer.getAction(), currentPlayer.isStunned(), currentPlayer.getActionPoints());
 
         nextPlayer();
+
+        if (currentPlayer.isPlayed() && nextPlayer.isPlayed()) {
+            calculateDamage();
+        }
     }
 
     private void nextPlayer() {
@@ -43,6 +59,10 @@ public class Fight {
             }
         }
         return false; // Diese Zeile sollte eig nie erreicht werden aber es ist da des es keine Probleme mit Java gibt.
+    }
+
+    public void calculateDamage() {
+        System.out.println("Berechnungen..............");
     }
 
 

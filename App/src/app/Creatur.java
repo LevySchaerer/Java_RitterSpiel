@@ -13,9 +13,10 @@ public class Creatur {
     String name;
     int health;
     boolean stunned = false;
+    boolean played = false;
     String action;
     int actionPoints;
-    int attackIndex = 0;
+    int attackIndex;
     ArrayList<Attack> Attacks = new ArrayList<>();
     ArrayList<Magic> Magics;
     ArrayList<Block> Blocks;
@@ -32,7 +33,6 @@ public class Creatur {
     public Creatur(String name, int health) {
         this.name = name;
         this.health = health;
-
         Attacks.add(uppercut);
         Attacks.add(kick);
         Attacks.add(punch);
@@ -41,6 +41,7 @@ public class Creatur {
     }
 
     public String choosAction() {
+        attackIndex = 0;
         for (Attack attack : Attacks) {
             attackIndex ++;
             System.out.println(attackIndex + ". Costs: " + attack.getActionCost() + ", " + attack.getName());
@@ -49,7 +50,13 @@ public class Creatur {
 
         System.out.println("Which action do you want to perform? ");
         action = scanner.nextLine();
+
+        played = true;
         return action;
+    }
+
+    public void earnActionPoints(int points) {
+        actionPoints += points;
     }
 
     public String getName() {
@@ -64,6 +71,10 @@ public class Creatur {
         return actionPoints;
     }
 
+    public void setActionPoints(int actionPoints) {
+        this.actionPoints = actionPoints;
+    }
+
     public String getAction() {
         return action;
     }
@@ -71,4 +82,9 @@ public class Creatur {
     public boolean isStunned() {
         return stunned;
     }
+
+    public boolean isPlayed() {
+        return played;
+    }
+
 }
