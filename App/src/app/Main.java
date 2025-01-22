@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] args) {
 
         Creatur player1 = new Creatur("Hans", 100);
-        Creatur player2 = new Creatur("Mike", 100);
+        Creatur player2 = new Creatur("Peter", 100);
 
         ArrayList<Creatur> players = new ArrayList<>();
         players.add(player1);
@@ -16,7 +16,6 @@ public class Main {
 
         Fight fight = new Fight(players);
 
-        fight.startTurn();
-
+        fight.startFight();
     }
 }

@@ -8,4 +8,13 @@ public class Attack extends Action {
         this.name = name;
         this.actionCost = actionCost;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public int getActionCost() {
+        return actionCost;
+    }
 }

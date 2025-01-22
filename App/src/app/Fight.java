@@ -21,7 +21,8 @@ public class Fight {
         Creatur currentPlayer = players.get(currentPlayerIndex);
         System.out.println("Dieser Spieler ist am Zug: " + currentPlayer.getName());
 
-        Turn playerTurn = new Turn();
+        currentPlayer.choosAction();
+        Turn playerTurn = new Turn(currentPlayer.getAction(), currentPlayer.isStunned(), currentPlayer.getActionPoints());
 
         nextPlayer();
     }
